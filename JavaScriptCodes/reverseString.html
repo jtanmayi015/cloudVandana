@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reverse Words Example</h1>
+    <p id="orignal">Hello World</p>
+    <p id ="reversed"></p>
+
+    <script>
+        function reverseEachWord(sentence){
+            let words = sentence.split(' ');
+            let reversed = [];
+
+            for(let i=0;i<words.length;i++){
+                let word =words[i];
+                let reverseWord = '';
+                
+                for(let j = word.length - 1;j >= 0; j--){
+                
+
+                reverseWord += word[j];
+                }
+            
+            reversed.push(reverseWord);
+        }   
+        return reversed.join(' ');
+    }
+    let orig = document.getElementById('orignal').textContent;
+    let reversed = reverseEachWord(orig);
+    document.getElementById('reversed').textContent = reversed;
+    </script>
+</body>
+</html>
